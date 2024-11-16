@@ -1,9 +1,11 @@
 package com.qomunal.opensource.androidresearch.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.qomunal.opensource.androidresearch.common.base.BaseActivity
 import com.qomunal.opensource.androidresearch.databinding.ActivityMainBinding
+import com.qomunal.opensource.androidresearch.ui.detail.DetailActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -24,6 +26,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.apply {
             btnTest.setOnClickListener {
                 // TODO your work
+                startActivity(Intent(this@MainActivity, DetailActivity::class.java).apply {
+                    putExtra(DetailActivity.TEXT_KEY_EXTRA, "Test")
+                })
             }
         }
     }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.qomunal.opensource.androidresearch.common.base.BaseActivity
 import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
+import com.qomunal.opensource.androidresearch.common.ext.getIntentExtraExt
 
 /**
  * Created by faisalamircs on 13/01/2024
@@ -17,9 +18,19 @@ import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
 
 class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
+    companion object {
+        val TAG = DetailActivity::class.java.name
+        const val TEXT_KEY_EXTRA = "TEXT_KEY_EXTRA"
+    }
+
     private val viewModel: DetailViewModel by viewModels()
+
     private val reouter: DetailRouter by lazy {
         DetailRouter(this)
+    }
+
+    private val extra : String? by lazy {
+        getIntentExtraExt(TEXT_KEY_EXTRA)
     }
 
     override fun setupViewBinding(): ActivityDetailBinding {
@@ -32,7 +43,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
     override fun initUI() {
         binding.apply {
-
+            tvText.text = extra
         }
     }
 
