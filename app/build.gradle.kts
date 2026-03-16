@@ -70,6 +70,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-service:2.8.7")
     implementation("androidx.lifecycle:lifecycle-process:2.8.7")
     implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.8.7")
+    implementation("androidx.activity:activity:1.8.0")
 
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation ("androidx.lifecycle:lifecycle-runtime-testing:2.8.7")

@@ -1,5 +1,6 @@
 package com.qomunal.opensource.androidresearch.ui.detail
 
+import androidx.appcompat.app.AppCompatActivity
 import com.qomunal.opensource.androidresearch.common.base.BaseRouter
 
 /**
@@ -12,6 +13,6 @@ import com.qomunal.opensource.androidresearch.common.base.BaseRouter
  */
 
 
-class DetailRouter(private val activity: DetailActivity) : BaseRouter(activity) {
+class DetailRouter(private val activity: AppCompatActivity) : BaseRouter(activity) {
 
 }

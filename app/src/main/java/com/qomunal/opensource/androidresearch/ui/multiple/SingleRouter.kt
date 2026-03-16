@@ -1,13 +1,11 @@
-package com.qomunal.opensource.androidresearch.ui.main
+package com.qomunal.opensource.androidresearch.ui.multiple
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.qomunal.opensource.androidresearch.common.base.BaseRouter
-import com.qomunal.opensource.androidresearch.ui.detail.DetailActivity
-import com.qomunal.opensource.androidresearch.ui.multiple.SingleActivity1
 
 /**
- * Created by faisalamircs on 13/01/2024
+ * Created by faisalamircs on 16/03/2026
  * -----------------------------------------
  * Name     : Muhammad Faisal Amir
  * E-mail   : faisalamircs@gmail.com
@@ -16,14 +14,18 @@ import com.qomunal.opensource.androidresearch.ui.multiple.SingleActivity1
  */
 
 
-class MainRouter(private val activity: AppCompatActivity) : BaseRouter(activity) {
-
-    fun toDetail(): Intent {
-        return DetailActivity.createIntent(activity, "test")
-    }
+class SingleRouter(private val activity: AppCompatActivity) : BaseRouter(activity) {
 
     fun toSingle1(): Intent {
         return SingleActivity1.createIntent(activity)
+    }
+
+    fun toSingle2(): Intent {
+        return SingleActivity2.createIntent(activity)
+    }
+
+    fun toSingle3(): Intent {
+        return SingleActivity3.createIntent(activity)
     }
 
 }

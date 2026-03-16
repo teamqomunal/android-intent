@@ -1,10 +1,13 @@
 package com.qomunal.opensource.androidresearch.ui.detail
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.qomunal.opensource.androidresearch.common.base.BaseActivity
-import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
 import com.qomunal.opensource.androidresearch.common.ext.getIntentExtraExt
+import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
 
 /**
  * Created by faisalamircs on 13/01/2024
@@ -19,13 +22,23 @@ import com.qomunal.opensource.androidresearch.common.ext.getIntentExtraExt
 class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
     companion object {
-        val TAG = DetailActivity::class.java.name
         const val TEXT_KEY_EXTRA = "TEXT_KEY_EXTRA"
+
+        fun createIntent(context: Context, text: String): Intent {
+            return Intent(context, DetailActivity::class.java).apply {
+                putExtra(TEXT_KEY_EXTRA, text)
+            }
+        }
+
+        fun launch(activity: AppCompatActivity, text: String) {
+            activity.startActivity(createIntent(activity, text))
+        }
+
     }
 
     private val viewModel: DetailViewModel by viewModels()
 
-    private val reouter: DetailRouter by lazy {
+    private val router: DetailRouter by lazy {
         DetailRouter(this)
     }
 
@@ -52,6 +65,5 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
 
         }
     }
-
 
 }
